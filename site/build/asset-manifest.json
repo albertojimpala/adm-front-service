@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c6df6917.css",
+    "main.js": "/static/js/main.b0477ca2.js",
+    "static/media/cidoa_logo.png": "/static/media/cidoa_logo.1e18f6bb3312f1693c28.png",
+    "index.html": "/index.html",
+    "main.c6df6917.css.map": "/static/css/main.c6df6917.css.map",
+    "main.b0477ca2.js.map": "/static/js/main.b0477ca2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6df6917.css",
+    "static/js/main.b0477ca2.js"
+  ]
+}
