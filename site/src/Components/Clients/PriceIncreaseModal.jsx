@@ -99,6 +99,7 @@ export const PriceIncreaseModal = ({ open, onClose, onSaved }) => {
                     dataSource={withKeys(result.updated)}
                     pagination={{ pageSize: 8 }}
                     rowKey="key"
+                    scroll={{ x: 'max-content' }}
                     size="small"
                   />
                 ),
@@ -116,6 +117,7 @@ export const PriceIncreaseModal = ({ open, onClose, onSaved }) => {
                     dataSource={withKeys(result.skipped)}
                     pagination={{ pageSize: 8 }}
                     rowKey="key"
+                    scroll={{ x: 'max-content' }}
                     size="small"
                   />
                 ),

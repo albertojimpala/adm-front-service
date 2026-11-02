@@ -238,6 +238,7 @@ export const ClientServices = ({ client, year, onChanged }) => {
       }}
       pagination={false}
       rowKey="id"
+      scroll={{ x: 'max-content' }}
       size="small"
     />
   );
@@ -269,6 +270,7 @@ export const ClientServices = ({ client, year, onChanged }) => {
         }
         pagination={false}
         rowKey="id"
+        scroll={{ x: 'max-content' }}
         size="small"
       />
 

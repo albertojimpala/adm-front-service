@@ -13,7 +13,7 @@ export const ChargeForm = ({ formRef, onSubmit, initialValues }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Fecha de vencimiento"
           name="dueDate"
@@ -22,7 +22,7 @@ export const ChargeForm = ({ formRef, onSubmit, initialValues }) => (
           <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Notas" name="notes">
           <Input.TextArea rows={3} />
         </Form.Item>
@@ -56,7 +56,7 @@ export const GenerateChargesForm = ({ formRef, onSubmit }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={10}>
+      <Col xs={24} sm={10}>
         <Form.Item
           label="Periodo"
           name="period"
@@ -69,7 +69,7 @@ export const GenerateChargesForm = ({ formRef, onSubmit }) => (
           />
         </Form.Item>
       </Col>
-      <Col span={14}>
+      <Col xs={24} sm={14}>
         <Form.Item
           extra="Vacío = todos los clientes activos"
           label="Cliente"

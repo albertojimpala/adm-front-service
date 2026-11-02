@@ -26,7 +26,7 @@ export const CompanyForm = ({
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={16}>
+      <Col xs={24} sm={16}>
         <Form.Item
           label="Razón social"
           name="name"
@@ -35,7 +35,7 @@ export const CompanyForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item
           label="RFC"
           name="rfc"
@@ -44,12 +44,12 @@ export const CompanyForm = ({
           <Input style={{ textTransform: 'uppercase' }} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Nombre comercial" name="tradeName">
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Régimen fiscal" name="regimeId">
           <RemoteSelect
             getLabel={oRegime => `${oRegime.code} - ${oRegime.description}`}
@@ -66,7 +66,7 @@ export const CompanyForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Email"
           name="email"
@@ -75,17 +75,17 @@ export const CompanyForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Teléfono" name="phone" rules={[{ max: 20 }]}>
           <Input />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Dirección" name="address">
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           extra="Folio de los recibos, ej. HAY → HAY-000123"
           label="Prefijo de folio"
@@ -101,14 +101,14 @@ export const CompanyForm = ({
         </Form.Item>
       </Col>
       {isEdit && (
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item label="Estatus" name="status">
             <Select options={STATUS_OPTIONS} />
           </Form.Item>
         </Col>
       )}
       {isEdit && (
-        <Col span={24}>
+        <Col xs={24} sm={24}>
           <Form.Item
             extra="PNG o JPG, máximo 2 MB. Aparece en los recibos de pago."
             label="Logo"

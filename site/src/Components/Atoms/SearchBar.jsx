@@ -1,15 +1,22 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
+  Badge,
   Button,
   Col,
   DatePicker,
   Form,
+  Grid,
   Input,
   Row,
   Select,
   Tooltip,
 } from 'antd';
-import { ReloadOutlined, SearchOutlined } from '@ant-design/icons';
+import {
+  FilterOutlined,
+  ReloadOutlined,
+  SearchOutlined,
+} from '@ant-design/icons';
 import { RemoteSelect } from './RemoteSelect';
 
 const { RangePicker } = DatePicker;
@@ -41,6 +48,14 @@ const toQueries = (elements, values) =>
  */
 export const SearchBar = ({ elements, handleSearch, initialValues = {} }) => {
   const [form] = Form.useForm();
+  const [isExpanded, setExpanded] = useState(false);
+  // en movil solo se muestra el primer filtro, los demas con el boton de filtros
+  const screens = Grid.useBreakpoint();
+  const bCollapsible = !screens.md && elements.length > 1;
+  const nHidden = elements.slice(1).filter(({ name }) => {
+    const value = form.getFieldValue(name);
+    return value !== undefined && value !== null && value !== '';
+  }).length;
 
   const onFinish = values => handleSearch(toQueries(elements, values));
 
@@ -87,8 +102,18 @@ export const SearchBar = ({ elements, handleSearch, initialValues = {} }) => {
       onFinish={onFinish}
     >
       <Row gutter={[12, 0]} align="bottom">
-        {elements.map(oElement => (
-          <Col key={oElement.name} xs={24} sm={12} md={oElement.span || 6}>
+        {elements.map((oElement, nIndex) => (
+          <Col
+            key={oElement.name}
+            md={oElement.span || 6}
+            sm={12}
+            style={
+              bCollapsible && !isExpanded && nIndex > 0
+                ? { display: 'none' }
+                : undefined
+            }
+            xs={24}
+          >
             <Form.Item label={oElement.label} name={oElement.name}>
               {renderField(oElement)}
             </Form.Item>
@@ -113,6 +138,17 @@ export const SearchBar = ({ elements, handleSearch, initialValues = {} }) => {
                 style={{ marginLeft: 8 }}
               />
             </Tooltip>
+            {bCollapsible && (
+              <Badge count={isExpanded ? 0 : nHidden} size="small">
+                <Button
+                  icon={<FilterOutlined />}
+                  onClick={() => setExpanded(!isExpanded)}
+                  style={{ marginLeft: 8 }}
+                >
+                  {isExpanded ? 'Menos filtros' : 'Más filtros'}
+                </Button>
+              </Badge>
+            )}
           </Form.Item>
         </Col>
       </Row>

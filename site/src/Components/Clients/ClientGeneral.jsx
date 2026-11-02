@@ -125,7 +125,7 @@ export const ClientGeneral = ({ clientId, model, onChanged, extra }) => {
         title={`Mensualidad ${nYear}`}
       >
         <Row gutter={[12, 12]}>
-          <Col span={6}>
+          <Col xs={12} md={6}>
             <Statistic
               prefix="$"
               precision={2}
@@ -133,7 +133,7 @@ export const ClientGeneral = ({ clientId, model, onChanged, extra }) => {
               value={oCharge.baseAmount}
             />
           </Col>
-          <Col span={6}>
+          <Col xs={12} md={6}>
             <Statistic
               prefix="$"
               precision={2}
@@ -141,7 +141,7 @@ export const ClientGeneral = ({ clientId, model, onChanged, extra }) => {
               value={oCharge.servicesAmount}
             />
           </Col>
-          <Col span={6}>
+          <Col xs={12} md={6}>
             <Statistic
               prefix="-$"
               precision={2}
@@ -149,7 +149,7 @@ export const ClientGeneral = ({ clientId, model, onChanged, extra }) => {
               value={oCharge.discountAmount}
             />
           </Col>
-          <Col span={6}>
+          <Col xs={12} md={6}>
             <Statistic
               prefix="$"
               precision={2}
@@ -188,6 +188,7 @@ export const ClientGeneral = ({ clientId, model, onChanged, extra }) => {
           dataSource={oCharge.lines || []}
           pagination={false}
           rowKey="serviceId"
+          scroll={{ x: 'max-content' }}
           size="small"
           style={{ marginTop: 12 }}
         />

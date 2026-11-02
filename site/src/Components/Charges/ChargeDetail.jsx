@@ -66,6 +66,7 @@ const ChargeInfo = ({ chargeId, model }) => {
           dataSource={charge.details || []}
           pagination={false}
           rowKey="id"
+          scroll={{ x: 'max-content' }}
           size="small"
         />
       </Card>
@@ -126,6 +127,7 @@ const ChargeInfo = ({ chargeId, model }) => {
           locale={{ emptyText: 'Sin pagos' }}
           pagination={false}
           rowKey="id"
+          scroll={{ x: 'max-content' }}
           size="small"
         />
       </Card>
@@ -144,7 +146,7 @@ export const ChargeDetail = ({ charge, onClose, model = 'charges' }) => (
     destroyOnHidden
     onClose={onClose}
     open={Boolean(charge)}
-    size={820}
+    size="min(820px, 100vw)"
     title="Detalle del cargo"
   >
     {charge && <ChargeInfo chargeId={charge.id} model={model} />}

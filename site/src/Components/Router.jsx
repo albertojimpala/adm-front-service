@@ -12,6 +12,7 @@ import {
   PaymentsScreen,
   PortalScreen,
   PositionsScreen,
+  ProfileScreen,
   ReceivablesScreen,
   RegimesScreen,
   RolesScreen,
@@ -58,6 +59,7 @@ const Router = () => (
       path="/dashboard"
     >
       <Route element={<InitialScreen />} index />
+      <Route element={<ProfileScreen />} path="profile" />
       {flatRoutes
         .filter(oRoute => SCREENS[oRoute.key])
         .map(({ key, path, module }) => {

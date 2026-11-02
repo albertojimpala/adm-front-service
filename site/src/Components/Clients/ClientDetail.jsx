@@ -5,6 +5,7 @@ import { ClientPendingCharges } from '../Receivables/ClientPendingCharges';
 import { ClientStatement } from '../Receivables/ClientStatement';
 import { ClientGeneral } from './ClientGeneral';
 import { ClientJobs } from '../Jobs/ClientJobs';
+import { ClientCredentials } from './ClientCredentials';
 
 export const ClientDetail = ({ client, onClose, onChanged }) => {
   const { can } = usePermissions();
@@ -14,7 +15,7 @@ export const ClientDetail = ({ client, onClose, onChanged }) => {
       destroyOnHidden
       onClose={onClose}
       open={Boolean(client)}
-      size={1000}
+      size="min(1000px, 100vw)"
       title={client?.name}
     >
       {client && (
@@ -27,6 +28,15 @@ export const ClientDetail = ({ client, onClose, onChanged }) => {
                 <ClientGeneral clientId={client.id} onChanged={onChanged} />
               ),
             },
+            ...(can('credentials', 'read')
+              ? [
+                  {
+                    key: 'credentials',
+                    label: 'Cuentas de acceso',
+                    children: <ClientCredentials clientId={client.id} />,
+                  },
+                ]
+              : []),
             ...(can('jobs', 'read')
               ? [
                   {

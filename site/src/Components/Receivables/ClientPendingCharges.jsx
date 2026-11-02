@@ -74,7 +74,7 @@ export const ClientPendingCharges = ({ clientId, model, onChanged }) => {
   return (
     <div>
       <Row gutter={[12, 12]}>
-        <Col span={6}>
+        <Col xs={12} md={6}>
           <Card size="small">
             <Statistic
               loading={loading}
@@ -85,7 +85,7 @@ export const ClientPendingCharges = ({ clientId, model, onChanged }) => {
             />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={12} md={6}>
           <Card size="small">
             <Statistic
               loading={loading}
@@ -101,7 +101,7 @@ export const ClientPendingCharges = ({ clientId, model, onChanged }) => {
             />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={12} md={6}>
           <Card size="small">
             <Statistic
               loading={loading}
@@ -110,7 +110,7 @@ export const ClientPendingCharges = ({ clientId, model, onChanged }) => {
             />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={12} md={6}>
           <Card size="small">
             <Statistic
               loading={loading}
@@ -129,6 +129,7 @@ export const ClientPendingCharges = ({ clientId, model, onChanged }) => {
         loading={loading}
         pagination={false}
         rowKey="id"
+        scroll={{ x: 'max-content' }}
         size="small"
         style={{ marginTop: 16 }}
       />

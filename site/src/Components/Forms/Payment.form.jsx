@@ -65,7 +65,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
     >
       <Row gutter={[12, 0]}>
         {charge ? (
-          <Col span={24}>
+          <Col xs={24} sm={24}>
             <Alert
               showIcon
               style={{ marginBottom: 16 }}
@@ -80,7 +80,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
           </Col>
         ) : (
           <>
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="Cliente"
                 name="clientId"
@@ -96,7 +96,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
                 />
               </Form.Item>
             </Col>
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="Cargo"
                 name="chargeId"
@@ -122,7 +122,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
             </Col>
           </>
         )}
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra={
               nBalance !== undefined
@@ -146,7 +146,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
             <InputNumber {...moneyInputProps} min={0.01} />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             label="Fecha de pago"
             name="paymentDate"
@@ -155,7 +155,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
             <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             label="Forma de pago"
             name="method"
@@ -164,7 +164,7 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
             <Select options={toOptions(PAYMENT_METHODS)} />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra="Banco o caja chica donde entra el dinero"
             label="Cuenta destino"
@@ -174,12 +174,12 @@ export const PaymentForm = ({ formRef, onSubmit, charge }) => {
             <AccountSelect />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item label="Referencia" name="reference" rules={[{ max: 100 }]}>
             <Input placeholder="Folio SPEI, autorización, etc." />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item label="Notas" name="notes">
             <Input />
           </Form.Item>

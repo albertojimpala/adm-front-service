@@ -18,7 +18,13 @@ body {
 }
 
 .site-header {
+  display: flex;
+  align-items: center;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.site-header > .ant-flex {
+  flex: 1;
 }
 
 .site-content {
@@ -27,6 +33,24 @@ body {
   background: #ffffff;
   border-radius: 8px;
   overflow: auto;
+}
+
+.site-footer {
+  text-align: center;
+}
+
+.header-user {
+  max-width: 50vw;
+}
+
+/* menu en drawer para pantallas chicas, mismo fondo que el sider */
+.menu-drawer .ant-drawer-body {
+  padding: 0;
+  background: #b8b8b8;
+}
+
+.menu-drawer .logo {
+  margin: 16px;
 }
 
 .screen-header {
@@ -75,4 +99,35 @@ body {
   width: 100%;
   margin: 16px auto;
   box-sizing: border-box;
+}
+
+/* pantallas chicas: menos margen para aprovechar el ancho */
+@media (max-width: 767px) {
+  .site-content,
+  .portal .site-content {
+    margin: 8px;
+    padding: 12px;
+  }
+
+  .site-footer {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .screen-header h3 {
+    font-size: 20px;
+  }
+
+  .ant-drawer-body {
+    padding: 12px;
+  }
+
+  .menu-drawer .ant-drawer-body {
+    padding: 0;
+  }
+
+  .ant-descriptions-bordered .ant-descriptions-item-label,
+  .ant-descriptions-bordered .ant-descriptions-item-content {
+    padding: 6px 8px;
+  }
 }

@@ -128,7 +128,7 @@ export const InitialScreen = () => {
                 />
               </div>
               <Row gutter={8}>
-                <Col span={12}>
+                <Col xs={24} lg={12}>
                   <Statistic
                     prefix="$"
                     precision={2}
@@ -136,7 +136,7 @@ export const InitialScreen = () => {
                     value={charges?.billed}
                   />
                 </Col>
-                <Col span={12}>
+                <Col xs={24} lg={12}>
                   <Statistic
                     prefix="$"
                     precision={2}

@@ -18,7 +18,7 @@ export const PositionForm = ({
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item
           label="Puesto"
           name="description"
@@ -27,7 +27,7 @@ export const PositionForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={isEdit ? 14 : 24}>
+      <Col xs={24} sm={isEdit ? 14 : 24}>
         <Form.Item
           label="Compañía"
           name="companyId"
@@ -43,7 +43,7 @@ export const PositionForm = ({
         </Form.Item>
       </Col>
       {isEdit && (
-        <Col span={10}>
+        <Col xs={24} sm={10}>
           <Form.Item label="Estatus" name="status">
             <Select options={STATUS_OPTIONS} />
           </Form.Item>

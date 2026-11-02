@@ -8,7 +8,7 @@ export const ReceivableDetail = ({ client, onClose, onChanged }) => (
     destroyOnHidden
     onClose={onClose}
     open={Boolean(client)}
-    size={1000}
+    size="min(1000px, 100vw)"
     title={client?.name}
   >
     {client && (

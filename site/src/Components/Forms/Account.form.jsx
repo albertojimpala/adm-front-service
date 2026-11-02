@@ -23,7 +23,7 @@ export const AccountForm = ({ formRef, onSubmit, initialValues, isEdit }) => {
       onFinish={onSubmit}
     >
       <Row gutter={[12, 0]}>
-        <Col span={14}>
+        <Col xs={24} sm={14}>
           <Form.Item
             label="Nombre"
             name="name"
@@ -35,19 +35,19 @@ export const AccountForm = ({ formRef, onSubmit, initialValues, isEdit }) => {
             <Input placeholder="Ej. BBVA empresarial" />
           </Form.Item>
         </Col>
-        <Col span={10}>
+        <Col xs={24} sm={10}>
           <Form.Item label="Tipo" name="type" rules={[{ required: true }]}>
             <Select disabled={isEdit} options={toOptions(ACCOUNT_TYPES)} />
           </Form.Item>
         </Col>
         {sType === 'bank' && (
           <>
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item label="Banco" name="bankName" rules={[{ max: 100 }]}>
                 <Input />
               </Form.Item>
             </Col>
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="Número de cuenta"
                 name="accountNumber"
@@ -56,7 +56,7 @@ export const AccountForm = ({ formRef, onSubmit, initialValues, isEdit }) => {
                 <Input />
               </Form.Item>
             </Col>
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="CLABE"
                 name="clabe"
@@ -68,7 +68,7 @@ export const AccountForm = ({ formRef, onSubmit, initialValues, isEdit }) => {
           </>
         )}
         {!isEdit && (
-          <Col span={12}>
+          <Col xs={24} sm={12}>
             <Form.Item
               extra="Se registra como movimiento de ajuste"
               label="Saldo inicial"
@@ -79,7 +79,7 @@ export const AccountForm = ({ formRef, onSubmit, initialValues, isEdit }) => {
           </Col>
         )}
         {isEdit && (
-          <Col span={12}>
+          <Col xs={24} sm={12}>
             <Form.Item label="Estatus" name="status">
               <Select options={STATUS_OPTIONS} />
             </Form.Item>
@@ -125,12 +125,12 @@ export const MovementForm = ({ formRef, onSubmit }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Tipo" name="type" rules={[{ required: true }]}>
           <Select options={toOptions(MOVEMENT_TYPES)} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Categoría"
           name="category"
@@ -144,7 +144,7 @@ export const MovementForm = ({ formRef, onSubmit }) => (
           />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Monto"
           name="amount"
@@ -153,7 +153,7 @@ export const MovementForm = ({ formRef, onSubmit }) => (
           <InputNumber {...moneyInputProps} min={0.01} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Fecha"
           name="movementDate"
@@ -162,7 +162,7 @@ export const MovementForm = ({ formRef, onSubmit }) => (
           <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item
           label="Concepto"
           name="concept"
@@ -190,7 +190,7 @@ export const TransferForm = ({ formRef, onSubmit }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="De la cuenta"
           name="fromAccountId"
@@ -199,7 +199,7 @@ export const TransferForm = ({ formRef, onSubmit }) => (
           <AccountSelect />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           dependencies={['fromAccountId']}
           label="A la cuenta"
@@ -217,7 +217,7 @@ export const TransferForm = ({ formRef, onSubmit }) => (
           <AccountSelect />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Monto"
           name="amount"
@@ -226,7 +226,7 @@ export const TransferForm = ({ formRef, onSubmit }) => (
           <InputNumber {...moneyInputProps} min={0.01} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Fecha"
           name="movementDate"
@@ -235,7 +235,7 @@ export const TransferForm = ({ formRef, onSubmit }) => (
           <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Concepto" name="concept" rules={[{ max: 250 }]}>
           <Input placeholder="Ej. Depósito de caja chica al banco" />
         </Form.Item>

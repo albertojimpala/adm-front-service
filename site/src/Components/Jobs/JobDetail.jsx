@@ -94,7 +94,7 @@ export const JobDetail = ({ job, onClose, model = 'jobs' }) => (
     destroyOnHidden
     onClose={onClose}
     open={Boolean(job)}
-    size={760}
+    size="min(760px, 100vw)"
     title={job?.title}
   >
     {job && <JobInfo jobId={job.id} model={model} />}

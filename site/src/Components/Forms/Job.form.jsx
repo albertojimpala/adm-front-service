@@ -23,7 +23,7 @@ export const JobForm = ({
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item
           label="Cliente"
           name="clientId"
@@ -39,7 +39,7 @@ export const JobForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={16}>
+      <Col xs={24} sm={16}>
         <Form.Item
           label="Trabajo"
           name="title"
@@ -48,7 +48,7 @@ export const JobForm = ({
           <Input placeholder="Ej. Contabilidad de octubre" />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item label="Periodo" name="period">
           <DatePicker
             format="MMMM YYYY"
@@ -57,7 +57,7 @@ export const JobForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           extra={isEdit ? undefined : 'Vacío = el encargado del cliente'}
           label="Responsable"
@@ -75,7 +75,7 @@ export const JobForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Servicio" name="serviceId">
           <RemoteSelect
             initialOption={
@@ -91,24 +91,24 @@ export const JobForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item label="Inicio" name="startDate">
           <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item label="Fecha compromiso" name="dueDate">
           <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
       {!isEdit && (
-        <Col span={8}>
+        <Col xs={24} sm={8}>
           <Form.Item label="Avance" name="progress">
             <Select options={toOptions(JOB_PROGRESS)} />
           </Form.Item>
         </Col>
       )}
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Descripción" name="description">
           <Input.TextArea rows={3} />
         </Form.Item>

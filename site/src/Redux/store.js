@@ -9,9 +9,17 @@ import {
   persistReducer,
   persistStore,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import { encryptTransform } from 'redux-persist-transform-encrypt';
 import auth from './reducers/auth';
+
+// adaptador de localStorage; el default de redux-persist/lib/storage es CJS y
+// Vite lo entrega envuelto, lo que deja la app en blanco
+const storage = {
+  getItem: key => Promise.resolve(window.localStorage.getItem(key)),
+  setItem: (key, value) =>
+    Promise.resolve(window.localStorage.setItem(key, value)),
+  removeItem: key => Promise.resolve(window.localStorage.removeItem(key)),
+};
 
 const persistConfig = {
   key: 'adm-v2.0',

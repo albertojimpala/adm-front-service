@@ -65,7 +65,7 @@ export const ClientForm = ({
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item
           label="Compañía"
           name="companyId"
@@ -80,7 +80,7 @@ export const ClientForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={16}>
+      <Col xs={24} sm={16}>
         <Form.Item
           label="Nombre o razón social"
           name="name"
@@ -89,7 +89,7 @@ export const ClientForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item
           label="RFC"
           name="rfc"
@@ -98,7 +98,7 @@ export const ClientForm = ({
           <Input style={{ textTransform: 'uppercase' }} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Nombre comercial"
           name="tradeName"
@@ -107,7 +107,7 @@ export const ClientForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Régimen fiscal" name="regimeId">
           <RemoteSelect
             getLabel={oRegime => `${oRegime.code} - ${oRegime.description}`}
@@ -128,7 +128,7 @@ export const ClientForm = ({
 
     <Divider titlePlacement="start">Cobranza</Divider>
     <Row gutter={[12, 0]}>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item
           extra="Empleado responsable de atender al cliente (de la misma compañía)"
           label="Encargado"
@@ -137,7 +137,7 @@ export const ClientForm = ({
           <ManagerSelect formRef={formRef} selected={selected} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Tipo de suscripción" name="subscriptionTypeId">
           <RemoteSelect
             initialOption={
@@ -153,7 +153,7 @@ export const ClientForm = ({
           />
         </Form.Item>
       </Col>
-      <Col span={6}>
+      <Col xs={24} sm={6}>
         <Form.Item
           extra="Día de vencimiento (1-28)"
           label="Día de pago"
@@ -162,13 +162,13 @@ export const ClientForm = ({
           <InputNumber max={28} min={1} style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={6}>
+      <Col xs={24} sm={6}>
         <Form.Item label="Fecha de alta" name="startDate">
           <DatePicker format="DD/MM/YYYY" style={{ width: '100%' }} />
         </Form.Item>
       </Col>
       {isEdit && (
-        <Col span={6}>
+        <Col xs={24} sm={6}>
           <Form.Item label="Estatus" name="status">
             <Select options={STATUS_OPTIONS} />
           </Form.Item>
@@ -178,12 +178,12 @@ export const ClientForm = ({
 
     <Divider titlePlacement="start">Contacto</Divider>
     <Row gutter={[12, 0]}>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Contacto" name="contactName" rules={[{ max: 250 }]}>
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Email"
           name="email"
@@ -192,32 +192,32 @@ export const ClientForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Teléfono" name="phone" rules={[{ max: 20 }]}>
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Código postal" name="zipCode" rules={[{ max: 10 }]}>
           <Input />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Dirección" name="address">
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Ciudad" name="city" rules={[{ max: 100 }]}>
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Estado" name="state" rules={[{ max: 100 }]}>
           <Input />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Notas" name="notes">
           <Input.TextArea rows={2} />
         </Form.Item>

@@ -77,6 +77,7 @@ export const GenerateChargesModal = ({ open, onClose, onSaved }) => {
               dataSource={result.skipped}
               pagination={{ pageSize: 6 }}
               rowKey="clientId"
+              scroll={{ x: 'max-content' }}
               size="small"
             />
           )}

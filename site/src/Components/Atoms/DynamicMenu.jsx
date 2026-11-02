@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types';
 import { Menu } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { usePermissions } from '../../Hooks';
 import { filterRoutesByPermission } from '../../Utils/menu';
 import { flatRoutes } from '../../Utils/routes';
 
-export const DynamicMenu = props => {
+// onNavigate se llama despues de cambiar de pantalla (cierra el menu en movil)
+export const DynamicMenu = ({ onNavigate, ...props }) => {
   const { can } = usePermissions();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -31,6 +33,7 @@ export const DynamicMenu = props => {
   const onClick = ({ key }) => {
     const oRoute = flatRoutes.find(o => o.key === key);
     navigate(oRoute.path ? `/dashboard/${oRoute.path}` : '/dashboard');
+    onNavigate?.();
   };
 
   return (
@@ -44,4 +47,8 @@ export const DynamicMenu = props => {
       {...props}
     />
   );
+};
+
+DynamicMenu.propTypes = {
+  onNavigate: PropTypes.func,
 };

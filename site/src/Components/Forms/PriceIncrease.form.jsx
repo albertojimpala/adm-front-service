@@ -32,7 +32,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
       onFinish={onSubmit}
     >
       <Row gutter={[12, 0]}>
-        <Col span={8}>
+        <Col xs={24} sm={8}>
           <Form.Item
             label="Año"
             name="year"
@@ -41,7 +41,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
             <InputNumber max={2100} min={2000} style={{ width: '100%' }} />
           </Form.Item>
         </Col>
-        <Col span={16}>
+        <Col xs={24} sm={16}>
           <Form.Item label="Tipo de incremento" name="mode">
             <Radio.Group
               optionType="button"
@@ -52,7 +52,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
             />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra={MODES[sMode].extra}
             label={MODES[sMode].label}
@@ -74,7 +74,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
             )}
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra="Si ya tiene precio capturado para ese año"
             label="Reemplazar precios existentes"
@@ -83,7 +83,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
             <Switch />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra="Vacío = todos los servicios"
             label="Servicio"
@@ -92,7 +92,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
             <RemoteSelect model="services" placeholder="Todos" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra="Vacío = todos los clientes activos"
             label="Cliente"
@@ -101,7 +101,7 @@ export const PriceIncreaseForm = ({ formRef, onSubmit }) => {
             <ClientSelect placeholder="Todos" />
           </Form.Item>
         </Col>
-        <Col span={24}>
+        <Col xs={24} sm={24}>
           <Form.Item label="Notas" name="notes" rules={[{ max: 250 }]}>
             <Input placeholder="Ej. incremento anual 2027" />
           </Form.Item>

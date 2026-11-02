@@ -15,4 +15,5 @@ export * from './Companies';
 export * from './Employees';
 export * from './Portal';
 export * from './Positions';
+export * from './Profile';
 export * from './Jobs';

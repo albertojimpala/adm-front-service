@@ -2,6 +2,8 @@ export * from './Account.form';
 export * from './Charge.form';
 export * from './Client.form';
 export * from './ClientService.form';
+export * from './ClientCredential.form';
+export * from './ChangePassword.form';
 export * from './Payment.form';
 export * from './PriceIncrease.form';
 export * from './Regime.form';

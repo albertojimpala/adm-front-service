@@ -14,7 +14,7 @@ export const ClientServiceForm = ({ formRef, onSubmit }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item
           label="Servicio"
           name="serviceId"
@@ -27,12 +27,12 @@ export const ClientServiceForm = ({ formRef, onSubmit }) => (
           />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item label="Cantidad" name="quantity">
           <InputNumber min={1} style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item
           extra="Vacío = precio de catálogo"
           label="Precio"
@@ -41,7 +41,7 @@ export const ClientServiceForm = ({ formRef, onSubmit }) => (
           <InputNumber {...moneyInputProps} />
         </Form.Item>
       </Col>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item label="A partir del año" name="year">
           <InputNumber max={2100} min={2000} style={{ width: '100%' }} />
         </Form.Item>
@@ -65,7 +65,7 @@ export const ServicePriceForm = ({ formRef, onSubmit, initialValues }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={10}>
+      <Col xs={24} sm={10}>
         <Form.Item
           label="Año"
           name="year"
@@ -74,7 +74,7 @@ export const ServicePriceForm = ({ formRef, onSubmit, initialValues }) => (
           <InputNumber max={2100} min={2000} style={{ width: '100%' }} />
         </Form.Item>
       </Col>
-      <Col span={14}>
+      <Col xs={24} sm={14}>
         <Form.Item
           label="Precio mensual"
           name="price"
@@ -83,7 +83,7 @@ export const ServicePriceForm = ({ formRef, onSubmit, initialValues }) => (
           <InputNumber {...moneyInputProps} />
         </Form.Item>
       </Col>
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Notas" name="notes" rules={[{ max: 250 }]}>
           <Input placeholder="Ej. incremento anual" />
         </Form.Item>

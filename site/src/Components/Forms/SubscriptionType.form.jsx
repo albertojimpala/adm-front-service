@@ -17,7 +17,7 @@ export const SubscriptionTypeForm = ({
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item
           label="Código"
           name="code"
@@ -26,7 +26,7 @@ export const SubscriptionTypeForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={16}>
+      <Col xs={24} sm={16}>
         <Form.Item
           label="Descripción"
           name="description"
@@ -35,7 +35,7 @@ export const SubscriptionTypeForm = ({
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           extra="Cuota fija mensual"
           label="Cuota base"
@@ -44,7 +44,7 @@ export const SubscriptionTypeForm = ({
           <InputNumber {...moneyInputProps} />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           extra="Se aplica sobre el total de servicios"
           label="Descuento"
@@ -60,7 +60,7 @@ export const SubscriptionTypeForm = ({
         </Form.Item>
       </Col>
       {isEdit && (
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item label="Estatus" name="status">
             <Select options={STATUS_OPTIONS} />
           </Form.Item>

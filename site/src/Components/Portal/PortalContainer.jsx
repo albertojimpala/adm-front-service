@@ -18,6 +18,7 @@ import { ContactModal } from './ContactModal';
 import { PortalCharges } from './PortalCharges';
 import { PortalPayments } from './PortalPayments';
 import { ClientJobs } from '../Jobs/ClientJobs';
+import { UserProfile } from '../Profile/UserProfile';
 
 const { Content, Footer, Header } = Layout;
 
@@ -96,6 +97,7 @@ export const PortalContainer = () => {
               label: 'Estado de cuenta',
               children: <ClientStatement model="portal/statement" />,
             },
+            { key: 'profile', label: 'Mi usuario', children: <UserProfile /> },
           ]}
         />
       </Content>

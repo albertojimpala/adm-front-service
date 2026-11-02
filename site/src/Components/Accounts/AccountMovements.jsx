@@ -86,6 +86,7 @@ const MovementList = ({ accountId }) => {
           onChange: changePage,
         }}
         rowKey="id"
+        scroll={{ x: 'max-content' }}
         size="small"
       />
     </>
@@ -101,7 +102,7 @@ export const AccountMovements = ({ account, onClose }) => (
     destroyOnHidden
     onClose={onClose}
     open={Boolean(account)}
-    size={900}
+    size="min(900px, 100vw)"
     title={
       account &&
       `Movimientos de ${account.name} · saldo ${formatMoney(account.balance)}`

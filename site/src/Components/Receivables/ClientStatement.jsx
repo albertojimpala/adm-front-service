@@ -74,7 +74,7 @@ export const ClientStatement = ({ clientId, model }) => {
           ['Pagos', data?.totalPayments],
           ['Saldo final', data?.closingBalance],
         ].map(([sTitle, nValue]) => (
-          <Col key={sTitle} span={6}>
+          <Col key={sTitle} xs={12} md={6}>
             <Card size="small">
               <Statistic
                 loading={loading}
@@ -93,6 +93,7 @@ export const ClientStatement = ({ clientId, model }) => {
         loading={loading}
         pagination={false}
         rowKey="key"
+        scroll={{ x: 'max-content' }}
         size="small"
         style={{ marginTop: 16 }}
       />

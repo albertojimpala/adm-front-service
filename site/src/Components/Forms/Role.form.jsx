@@ -66,6 +66,7 @@ const PermissionsMatrix = ({ value = {}, onChange }) => {
         label,
       }))}
       pagination={false}
+      scroll={{ x: 'max-content' }}
       size="small"
     />
   );
@@ -85,7 +86,7 @@ export const RoleForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           label="Descripción"
           name="description"
@@ -94,7 +95,7 @@ export const RoleForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
           <Input />
         </Form.Item>
       </Col>
-      <Col span={isEdit ? 6 : 12}>
+      <Col xs={24} sm={isEdit ? 6 : 12}>
         <Form.Item
           extra="La API valida admin o users"
           label="Tag"
@@ -105,13 +106,13 @@ export const RoleForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
         </Form.Item>
       </Col>
       {isEdit && (
-        <Col span={6}>
+        <Col xs={24} sm={6}>
           <Form.Item label="Estatus" name="status">
             <Select options={STATUS_OPTIONS} />
           </Form.Item>
         </Col>
       )}
-      <Col span={24}>
+      <Col xs={24} sm={24}>
         <Form.Item label="Permisos" name="permissions">
           <PermissionsMatrix />
         </Form.Item>

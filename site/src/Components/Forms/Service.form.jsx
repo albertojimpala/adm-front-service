@@ -12,7 +12,7 @@ export const ServiceForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item
           label="Código"
           name="code"
@@ -21,7 +21,7 @@ export const ServiceForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
           <Input />
         </Form.Item>
       </Col>
-      <Col span={16}>
+      <Col xs={24} sm={16}>
         <Form.Item
           label="Descripción"
           name="description"
@@ -30,7 +30,7 @@ export const ServiceForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item
           extra="Precio de catálogo. Cada cliente puede tener su propio precio por año."
           label="Precio mensual"
@@ -41,7 +41,7 @@ export const ServiceForm = ({ formRef, onSubmit, initialValues, isEdit }) => (
         </Form.Item>
       </Col>
       {isEdit && (
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item label="Estatus" name="status">
             <Select options={STATUS_OPTIONS} />
           </Form.Item>

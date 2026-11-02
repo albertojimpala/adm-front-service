@@ -26,7 +26,7 @@ export const UserForm = ({
       onFinish={onSubmit}
     >
       <Row gutter={[12, 0]}>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             label="Usuario"
             name="username"
@@ -38,7 +38,7 @@ export const UserForm = ({
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             label="Email"
             name="email"
@@ -50,7 +50,7 @@ export const UserForm = ({
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             extra={isEdit ? 'Déjala vacía para conservar la actual' : undefined}
             label="Contraseña"
@@ -63,7 +63,7 @@ export const UserForm = ({
             <Input.Password autoComplete="new-password" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             dependencies={['password']}
             label="Repetir contraseña"
@@ -80,7 +80,7 @@ export const UserForm = ({
             <Input.Password autoComplete="new-password" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Form.Item
             label="Rol"
             name="roleId"
@@ -103,14 +103,14 @@ export const UserForm = ({
           </Form.Item>
         </Col>
         {isEdit && (
-          <Col span={12}>
+          <Col xs={24} sm={12}>
             <Form.Item label="Estatus" name="status">
               <Select options={STATUS_OPTIONS} />
             </Form.Item>
           </Col>
         )}
         {bClientRole ? (
-          <Col span={24}>
+          <Col xs={24} sm={24}>
             <Alert
               showIcon
               style={{ marginBottom: 12 }}
@@ -132,7 +132,7 @@ export const UserForm = ({
             </Form.Item>
           </Col>
         ) : (
-          <Col span={24}>
+          <Col xs={24} sm={24}>
             <Form.Item
               extra="Opcional: liga el usuario a un empleado"
               label="Empleado"

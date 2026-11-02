@@ -11,7 +11,7 @@ export const RegimeForm = ({ formRef, onSubmit, initialValues }) => (
     onFinish={onSubmit}
   >
     <Row gutter={[12, 0]}>
-      <Col span={8}>
+      <Col xs={24} sm={8}>
         <Form.Item
           label="Clave"
           name="code"
@@ -20,7 +20,7 @@ export const RegimeForm = ({ formRef, onSubmit, initialValues }) => (
           <Input />
         </Form.Item>
       </Col>
-      <Col span={16}>
+      <Col xs={24} sm={16}>
         <Form.Item
           label="Descripción"
           name="description"
@@ -29,7 +29,7 @@ export const RegimeForm = ({ formRef, onSubmit, initialValues }) => (
           <Input />
         </Form.Item>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={12}>
         <Form.Item label="Estatus" name="status" rules={[{ required: true }]}>
           <Select options={STATUS_OPTIONS} />
         </Form.Item>

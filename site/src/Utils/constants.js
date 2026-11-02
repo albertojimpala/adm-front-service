@@ -45,6 +45,50 @@ export const JOB_PROGRESS = {
   finished: { label: 'Finalizado', color: 'success' },
 };
 
+// sugerencias para las cuentas de acceso de los clientes, se puede escribir cualquier otra
+export const GOVERNMENT_PLATFORMS = [
+  {
+    name: 'SAT',
+    label: 'Servicio de Administración Tributaria',
+    url: 'https://www.sat.gob.mx',
+  },
+  {
+    name: 'IMSS',
+    label: 'Instituto Mexicano del Seguro Social',
+    url: 'https://www.imss.gob.mx',
+  },
+  {
+    name: 'IDSE',
+    label: 'IMSS desde su empresa',
+    url: 'https://idse.imss.gob.mx',
+  },
+  {
+    name: 'SIPARE',
+    label: 'Pago de cuotas obrero patronales',
+    url: 'https://sipare.imss.gob.mx',
+  },
+  {
+    name: 'INFONAVIT',
+    label: 'Portal empresarial',
+    url: 'https://empresarios.infonavit.org.mx',
+  },
+  {
+    name: 'FONACOT',
+    label: 'Instituto del Fondo Nacional para el Consumo de los Trabajadores',
+    url: 'https://www.fonacot.gob.mx',
+  },
+  {
+    name: 'REPSE',
+    label: 'Registro de prestadoras de servicios especializados',
+    url: 'https://repse.stps.gob.mx',
+  },
+  {
+    name: 'FINANZAS ESTATAL',
+    label: 'Impuesto sobre nómina y contribuciones estatales',
+    url: '',
+  },
+];
+
 export const AGING_BUCKETS = {
   current: 'Al corriente',
   days1to30: '1 a 30 días',
@@ -60,6 +104,7 @@ export const PERMISSION_MODULES = {
   employees: 'Empleados',
   positions: 'Puestos',
   clients: 'Clientes',
+  credentials: 'Cuentas de acceso de clientes',
   services: 'Servicios',
   subscriptions: 'Tipos de suscripción',
   charges: 'Cargos',

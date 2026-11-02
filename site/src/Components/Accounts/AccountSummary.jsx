@@ -49,7 +49,7 @@ export const AccountSummary = ({ refreshKey }) => {
             <Col key={sType} md={10} xs={24}>
               <Typography.Text strong>{label}</Typography.Text>
               <Row gutter={[8, 8]}>
-                <Col span={6}>
+                <Col xs={12} md={6}>
                   <Statistic
                     loading={loading}
                     prefix="$"
@@ -58,7 +58,7 @@ export const AccountSummary = ({ refreshKey }) => {
                     value={oTotals.balance}
                   />
                 </Col>
-                <Col span={6}>
+                <Col xs={12} md={6}>
                   <Statistic
                     loading={loading}
                     prefix="$"
@@ -68,7 +68,7 @@ export const AccountSummary = ({ refreshKey }) => {
                     value={oTotals.collected}
                   />
                 </Col>
-                <Col span={6}>
+                <Col xs={12} md={6}>
                   <Statistic
                     loading={loading}
                     prefix="$"
@@ -77,7 +77,7 @@ export const AccountSummary = ({ refreshKey }) => {
                     value={oTotals.totalIn}
                   />
                 </Col>
-                <Col span={6}>
+                <Col xs={12} md={6}>
                   <Statistic
                     loading={loading}
                     prefix="$"
