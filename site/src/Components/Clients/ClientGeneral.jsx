@@ -18,6 +18,7 @@ import { useFetchOne } from '../../Hooks';
 import { formatDate, formatMoney } from '../../Utils/format';
 import { StatusTag } from '../Atoms/StatusTag';
 import { ClientServices } from './ClientServices';
+import { Sat69bClientCheck } from './Sat69b';
 
 // datos del cliente, mensualidad del año y servicios contratados
 // model permite usar la ruta del portal (portal/me), extra agrega acciones arriba
@@ -47,6 +48,8 @@ export const ClientGeneral = ({ clientId, model, onChanged, extra }) => {
 
   return (
     <Spin spinning={loading}>
+      {/* el portal (model) es del propio cliente: la revision 69-B es del despacho */}
+      {!model && <Sat69bClientCheck clientId={client.id} />}
       {extra && (
         <Flex justify="end" style={{ marginBottom: 12 }}>
           {extra}

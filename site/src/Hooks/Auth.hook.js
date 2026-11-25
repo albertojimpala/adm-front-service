@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { authClear, authSuccess } from '../Redux/reducers/auth';
-import { persistor } from '../Redux/store';
+import { persistor, setRemember } from '../Redux/store';
 import { login, logout as apiLogout } from '../Service/Api';
 
 export const useAuth = () => {
@@ -10,7 +10,8 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const post = async (email, password) => {
+  // remember: conservar la sesion al cerrar el navegador
+  const post = async (email, password, remember = false) => {
     setLoading(true);
     setError(null);
     const response = await login(email, password);
@@ -18,6 +19,8 @@ export const useAuth = () => {
 
     if (response?.ok) {
       const { access_token, refresh_token, user } = response.data;
+      // se fija antes de guardar para que la sesion vaya al almacenamiento elegido
+      setRemember(remember, email.trim().toLowerCase());
       const { role = {}, ...oUser } = user;
       dispatch(
         authSuccess({

@@ -1,6 +1,10 @@
 import { useState } from 'react';
-import { Button, Tooltip, Typography } from 'antd';
-import { EyeOutlined, RiseOutlined } from '@ant-design/icons';
+import { Button, Space, Tooltip, Typography } from 'antd';
+import {
+  EyeOutlined,
+  RiseOutlined,
+  SafetyCertificateOutlined,
+} from '@ant-design/icons';
 import { usePermissions } from '../../Hooks';
 import { STATUS_OPTIONS } from '../../Utils/constants';
 import { CrudTable } from '../Atoms/CrudTable';
@@ -9,6 +13,7 @@ import { statusColumn } from '../Atoms/StatusTag';
 import { ClientForm, clientToForm, clientToPayload } from '../Forms';
 import { ClientDetail } from './ClientDetail';
 import { PriceIncreaseModal } from './PriceIncreaseModal';
+import { Sat69bReportModal } from './Sat69b';
 
 const columns = [
   {
@@ -87,6 +92,7 @@ export const ClientTable = () => {
   const { can } = usePermissions();
   const [detail, setDetail] = useState(null);
   const [priceIncrease, setPriceIncrease] = useState(false);
+  const [sat69b, setSat69b] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
 
   return (
@@ -103,14 +109,24 @@ export const ClientTable = () => {
         entityLabel="cliente"
         FormComponent={ClientForm}
         headerActions={
-          can('clients', 'update') && (
-            <Button
-              icon={<RiseOutlined />}
-              onClick={() => setPriceIncrease(true)}
-            >
-              Incremento anual
-            </Button>
-          )
+          <Space>
+            {can('clients', 'read') && (
+              <Button
+                icon={<SafetyCertificateOutlined />}
+                onClick={() => setSat69b(true)}
+              >
+                Validar 69-B
+              </Button>
+            )}
+            {can('clients', 'update') && (
+              <Button
+                icon={<RiseOutlined />}
+                onClick={() => setPriceIncrease(true)}
+              >
+                Incremento anual
+              </Button>
+            )}
+          </Space>
         }
         model="clients"
         modalWidth={820}
@@ -130,6 +146,7 @@ export const ClientTable = () => {
         onClose={() => setPriceIncrease(false)}
         open={priceIncrease}
       />
+      <Sat69bReportModal onClose={() => setSat69b(false)} open={sat69b} />
     </>
   );
 };

@@ -1,10 +1,13 @@
-import { Alert, Button, Card, Form, Input, Typography } from 'antd';
+import { Alert, Button, Card, Checkbox, Form, Input, Typography } from 'antd';
 import { LockOutlined, LoginOutlined, MailOutlined } from '@ant-design/icons';
 import { useAuth } from '../../Hooks';
+import { rememberedEmail } from '../../Redux/store';
 import logo from '../../Assets/img/cidoa_logo.png';
 
 export const LoginScreen = () => {
   const [, login, , error, loading] = useAuth();
+  // si la ultima vez se marco "Recordarme", se prellena el correo
+  const sSavedEmail = rememberedEmail();
 
   return (
     <div className="login-screen">
@@ -22,9 +25,12 @@ export const LoginScreen = () => {
           />
         )}
         <Form
+          initialValues={{ email: sSavedEmail, remember: Boolean(sSavedEmail) }}
           layout="vertical"
           name="login"
-          onFinish={({ email, password }) => login(email, password)}
+          onFinish={({ email, password, remember }) =>
+            login(email, password, remember)
+          }
         >
           <Form.Item
             label="Correo electrónico"
@@ -45,6 +51,9 @@ export const LoginScreen = () => {
               autoComplete="current-password"
               prefix={<LockOutlined />}
             />
+          </Form.Item>
+          <Form.Item name="remember" valuePropName="checked">
+            <Checkbox>Recordarme</Checkbox>
           </Form.Item>
           <Button
             block

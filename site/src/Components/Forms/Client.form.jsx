@@ -20,8 +20,17 @@ import {
   EmployeeSelect,
   RemoteSelect,
 } from '../Atoms/RemoteSelect';
+import { Sat69bRfcCheck } from '../Clients/Sat69b';
 
 const RFC_PATTERN = /^[A-ZÑ&]{3,4}\d{6}[A-Z0-9]{3}$/i;
+
+// revisa en el listado 69-B del SAT el RFC que se va capturando
+const RfcSat69b = ({ formRef }) => {
+  const sRfc = Form.useWatch('rfc', formRef);
+  return <Sat69bRfcCheck rfc={sRfc} />;
+};
+
+RfcSat69b.propTypes = { formRef: PropTypes.object.isRequired };
 
 // empleados de la compañia elegida; se recarga al cambiar de compañia
 const ManagerSelect = ({ formRef, selected, ...props }) => {
@@ -97,6 +106,9 @@ export const ClientForm = ({
         >
           <Input style={{ textTransform: 'uppercase' }} />
         </Form.Item>
+      </Col>
+      <Col xs={24}>
+        <RfcSat69b formRef={formRef} />
       </Col>
       <Col xs={24} sm={12}>
         <Form.Item
